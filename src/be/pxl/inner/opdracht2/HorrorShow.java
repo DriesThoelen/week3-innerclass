@@ -28,16 +28,16 @@ public class HorrorShow {
             }
         }
 
-        class Frankenstein implements Monster {
-
-        }
-
         Vampire vampire = new Vampire();
         Werewolf werewolf = new Werewolf();
-        Monster monster = new Frankenstein();
 
         werewolf.destroy(vampire);
         System.out.println();
-        werewolf.destroy(monster);
+        werewolf.destroy(new Monster() {
+            @Override
+            public void menace() {
+                System.out.println("You smell like a wet dog.");
+            }
+        });
     }
 }
